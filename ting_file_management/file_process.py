@@ -5,12 +5,12 @@ def process(path_file, instance):
     """Aqui irá sua implementação"""
     file_name = path_file.split("/")[-1]
     for data in instance.get_data():
-        if data["nome_do_arquivo"] == file_name:
+        if data["nome_do_arquivo"] == path_file:
             print(f"arquivo {file_name} já processado")
             return
     lines_in_file = txt_importer(path_file)
     file_data = {
-        "nome_do_arquivo": file_name,
+        "nome_do_arquivo": path_file,
         "qtd_linhas": len(lines_in_file),
         "linhas_no_arquivo": lines_in_file,
     }
